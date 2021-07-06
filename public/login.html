@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lamp Post - Login</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        .user-type {
+            display: flex;
+            justify-content: space-between;
+            margin: 1em 0;
+        }
+        label[for] {
+            flex-basis: 50%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Eagle Project Login</h1>
+    <p>Please enter your name to begin using this app.</p>
+    <label>Enter your Full Name</label>
+    <input id="fullName" type="text" class="form-control" placeholder="first and last name">
+    <div class="user-type">
+        <label for="adult">
+            <input type="radio" id="adult" name="type">
+            Adult
+        </label>
+        <label for="scout">
+            <input type="radio" id="scout" name="type">
+            Scout
+        </label>
+    </div>
+    <button id="login-button" class="btn btn-primary w-100">LOG IN</button>
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script src="assets/javascript/login.js"></script>
+
+</body>
+</html>
