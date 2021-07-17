@@ -35,7 +35,8 @@ Lamppost.init(
         },
         preppedBy: DataTypes.STRING,
         paintedBy: DataTypes.STRING,
-        inspectedBy: DataTypes.STRING
+        inspectedBy: DataTypes.STRING,
+        damage: DataTypes.STRING
     },
     {
         sequelize,
