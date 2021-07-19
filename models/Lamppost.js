@@ -19,24 +19,49 @@ Lamppost.init(
         },
         status: {
             type: DataTypes.STRING,
-            allowNull: false
+            allowNull: false,
+            default: "new"
         },
 
         lat: {
-            type: DataTypes.DECIMAL,
+            type: DataTypes.FLOAT,
             allowNull: false
         },
         lng:  {
-            type: DataTypes.DECIMAL,
+            type: DataTypes.FLOAT,
             allowNull: false
         },
         notes: {
             type: DataTypes.STRING,
         },
-        preppedBy: DataTypes.STRING,
-        paintedBy: DataTypes.STRING,
-        inspectedBy: DataTypes.STRING,
-        damage: DataTypes.STRING
+        preppedBy: {
+            type: DataTypes.STRING,
+            allowNull: true,
+        },
+        preppedAt: {
+            type: DataTypes.DATE,
+            allowNull: true,
+        },
+        paintedBy: {
+            type: DataTypes.STRING,
+            allowNull: true,
+        },
+        paintedBy: {
+            type: DataTypes.DATE,
+            allowNull: true,
+        },
+        inspectedBy: {
+            type: DataTypes.STRING,
+            allowNull: true,
+        },
+        inspectedAt: {
+            type: DataTypes.DATE,
+            allowNull: true,
+        },
+        damage: {
+            type: DataTypes.STRING,
+            allowNull: true,
+        }
     },
     {
         sequelize,
