@@ -19,8 +19,16 @@ document.getElementById("login-button").addEventListener("click", function(event
     }
 
     if (valid) {
-        localStorage.setItem("LampPostUserId", fullName);
-        location.href = "index.html";
+        let type = $("[name='type']:checked").val();
+        console.log(fullName, type)
+        $.post("/api/volunteer", {name: fullName, type, status: "inactive"})
+        .then(function(dbVoluneer){
+            console.log("Volunteer in DB", dbVoluneer)
+            localStorage.setItem("LampPostUserId", fullName);
+            localStorage.setItem("LampPostUserIdType", type);
+            location.href = "index.html";
+
+        })
     }
 
 

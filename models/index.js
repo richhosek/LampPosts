@@ -1,3 +1,4 @@
 const Lamppost = require('./Lamppost');
+const Volunteer = require('./Volunteer');
 
-module.exports = { Lamppost };
+module.exports = { Lamppost, Volunteer };
