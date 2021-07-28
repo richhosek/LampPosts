@@ -13,6 +13,10 @@ Lamppost.init(
             primaryKey: true,
             autoIncrement: true
         },
+        lamppostId: {
+            type: DataTypes.STRING,
+            allowNull: false
+        },
         needsPrimer: {
             type: DataTypes.BOOLEAN,
             default: false
@@ -31,6 +35,9 @@ Lamppost.init(
             type: DataTypes.FLOAT,
             allowNull: false
         },
+        location: {
+            type: DataTypes.STRING,
+        },
         notes: {
             type: DataTypes.STRING,
         },
@@ -46,7 +53,7 @@ Lamppost.init(
             type: DataTypes.STRING,
             allowNull: true,
         },
-        paintedBy: {
+        paintedAt: {
             type: DataTypes.DATE,
             allowNull: true,
         },
