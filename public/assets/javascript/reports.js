@@ -6,7 +6,11 @@ let stateMap = {
     Inspect: "painted",
     Done: "inspected"
 }
-
+const identity = localStorage.getItem("LampPostUserId");
+if (!identity) {
+    location.href = "login.html"
+}
+document.querySelector(".navbar-brand").textContent += " - " + identity;
 $.get(`/api/lamppost`)
     .then(function(lampposts){
         console.log(lampposts)
