@@ -1,3 +1,9 @@
+
+if (location.search.includes("logout")) {
+    localStorage.removeItem("LampPostUserId")
+    localStorage.removeItem("LampPostUserType");
+}
+
 document.getElementById("login-button").addEventListener("click", function(event){
     event.preventDefault();
 
@@ -25,7 +31,7 @@ document.getElementById("login-button").addEventListener("click", function(event
         .then(function(dbVoluneer){
             console.log("Volunteer in DB", dbVoluneer)
             localStorage.setItem("LampPostUserId", fullName);
-            localStorage.setItem("LampPostUserIdType", type);
+            localStorage.setItem("LampPostUserType", type);
             location.href = "index.html";
 
         })
