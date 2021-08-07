@@ -11,7 +11,7 @@ if (!identity) {
     location.href = "login.html"
 }
 document.querySelector(".navbar-brand").textContent += " - " + identity;
-$.get(`/api/lamppost`)
+$.get(`/api/lamppost?t=${Date.now()}`)
     .then(function(lampposts){
         console.log(lampposts)
         lamppostList = lampposts;

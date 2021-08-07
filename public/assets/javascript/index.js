@@ -113,7 +113,7 @@ function showAddLamppostInfoWindow(event) {
 }
 
 function getLampposts() {
-    $.get("/api/lamppost")
+    $.get(`/api/lamppost?t=${Date.now()}`)
     .then(function(lampposts){
         console.log(lampposts)
         lampposts.forEach(function(lamppost){
@@ -150,7 +150,7 @@ function addLamppost(position, lamppostId) {
             newLamppost.location = response.results[0].formatted_address.split(",")[0];
             
         }
-        $.post("/api/lamppost", newLamppost);
+        $.post(`/api/lamppost?t=${Date.now()}`, newLamppost);
         addLampostMarker(newLamppost)    
     })
 }
@@ -182,7 +182,7 @@ function clickOnMarker() {
     if (gInfoWindow) { gInfoWindow.close();}
     let marker = this;
     console.log("YOU CLICKED ON LAMPOST: ", marker.title)
-    $.get(`/api/lamppost/${marker.title}`)
+    $.get(`/api/lamppost/${marker.title}?t=${Date.now()}`)
     .then(function(lamppost){
         console.log("Lamppost from Database", lamppost)
         let content = $(document.getElementById("infoWindow").outerHTML);
@@ -231,7 +231,7 @@ function clickOnMarker() {
 $(document).on("click", ".prepped", function(event){
     const lamppostId = $(event.target).data("id");
     console.log("prepped", lamppostId, gInfoWindow, gMarker)
-    $.get(`/api/lamppost/prepped/${lamppostId}/${identity}`)
+    $.get(`/api/lamppost/prepped/${lamppostId}/${identity}?t=${Date.now()}`)
     .then(function(dbLamppost){
         console.log("PREPPED IN DB", dbLamppost)
         gInfoWindow.close();
@@ -244,7 +244,7 @@ $(document).on("click", ".prepped", function(event){
 $(document).on("click", ".painted", function(event){
     const lamppostId = $(event.target).data("id");
     console.log("painted", lamppostId, gInfoWindow, gMarker)
-    $.get(`/api/lamppost/painted/${lamppostId}/${identity}`)
+    $.get(`/api/lamppost/painted/${lamppostId}/${identity}?t=${Date.now()}`)
     .then(function(dbLamppost){
         console.log("PAINTED IN DB", dbLamppost)
         gInfoWindow.close();
@@ -256,7 +256,7 @@ $(document).on("click", ".painted", function(event){
 $(document).on("click", ".inspected", function(event){
     const lamppostId = $(event.target).data("id");
     console.log("inspected", lamppostId, gInfoWindow, gMarker)
-    $.get(`/api/lamppost/inspected/${lamppostId}/${identity}`)
+    $.get(`/api/lamppost/inspected/${lamppostId}/${identity}?t=${Date.now()}`)
     .then(function(dbLamppost){
         console.log("INSPECTED IN DB", dbLamppost)
         gInfoWindow.close();
